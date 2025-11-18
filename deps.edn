@@ -1,0 +1,13 @@
+{:deps
+ {org.clojure/clojure {:mvn/version "1.11.1"} 
+  clojure.java-time/clojure.java-time {:mvn/version "1.1.0"}
+  ring/ring-core {:mvn/version "1.15.3"}
+  ring/ring-jetty-adapter {:mvn/version "1.15.3"}
+  cheshire/cheshire {:mvn/version "5.11.0"}
+  metosin/malli {:mvn/version "0.11.0"}    ;; optional validation
+  org.clojure/java.jdbc {:mvn/version "0.7.12"} ;; or next.jdbc
+  com.h2database/h2 {:mvn/version "2.2.220"}}
+ :aliases
+ {:run {:exec-fn notification-service.app/-main}
+  :test {:extra-paths ["test"]
+         :exec-fn test-runner/-main}}}
