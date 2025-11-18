@@ -43,9 +43,9 @@
             <select id="category" 
                     name="category"
                     class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 bg-gray-50 hover:bg-white">
-              <option value="sports">🏀 Sports</option>
-              <option value="finance">💰 Finance</option>
-              <option value="movies">🎬 Movies</option>
+              <option value="sports">Sports</option>
+              <option value="finance">Finance</option>
+              <option value="movies">Movies</option>
             </select>
           </div>
 
@@ -115,9 +115,9 @@
                     onchange="refreshLogs()"
                     class="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 bg-gray-50 hover:bg-white text-sm">
               <option value="">All Categories</option>
-              <option value="sports">🏀 Sports</option>
-              <option value="finance">💰 Finance</option>
-              <option value="movies">🎬 Movies</option>
+              <option value="sports">Sports</option>
+              <option value="finance">Finance</option>
+              <option value="movies">Movies</option>
             </select>
           </div>
         </div>
@@ -141,7 +141,6 @@
   </div>
 
   <script>
-    // Load users on page load
     async function loadUsers() {
       try {
         const response = await fetch('/users');
@@ -182,10 +181,8 @@
       }
     }
 
-    // Auto-refresh logs every 5 seconds
     setInterval(refreshLogs, 5000);
 
-    // Load users and initial logs on page load
     window.addEventListener('DOMContentLoaded', () => {
       loadUsers();
       refreshLogs();
