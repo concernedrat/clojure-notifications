@@ -5,7 +5,7 @@
 (defrecord SmsDelivery []
   IDelivery
   (deliver! [_ message user]
-    ;; mocked implementation; replace with actual SMS sending logic
+    ;; mocked implementation; replace with Twilio if this were real
     (try
       ;; Simulate sending
       {:ok? true

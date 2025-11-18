@@ -5,9 +5,9 @@
 (defrecord EmailDelivery []
   IDelivery
   (deliver! [_ message user]
-    ;; mocked implementation; replace with actual email sending logic
+    ;; mocked implementation; in real life, integrate with an email service provider, Twilio etc
     (try
-      ;; Simulate sending
+      ;; Simulate sending with no bs
       {:ok? true
        :detail (format "Email to %s: %s" (:email user) (:body message))
        :timestamp (jt/instant)}

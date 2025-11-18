@@ -6,6 +6,8 @@
    [notification-service.deliveries.email :as email]
    [notification-service.deliveries.push :as push]))
 
+;; Tests for delivery implementations, not exhaustive but enough for demo purposes
+;; In real life, I would mock external services and test failure modes too
 (deftest sms-delivery
   (let [d (sms/->SmsDelivery)
         res (deliver! d {:category :sports :body "hello"} {:id "u" :phone "p"})]

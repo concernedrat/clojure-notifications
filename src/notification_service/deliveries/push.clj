@@ -5,7 +5,7 @@
 (defrecord PushDelivery []
   IDelivery
   (deliver! [_ message user]
-    ;; mocked implementation; replace with provider SDK call
+    ;; mocked implementation; Firebase notifications (wink)
     (try
       ;; Simulate sending
       {:ok? true

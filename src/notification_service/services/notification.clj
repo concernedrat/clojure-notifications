@@ -24,6 +24,8 @@
   "Main orchestration function.
    Ideally, this would be async, but for simplicity, it's sync here.
    Also in prod this must run from a background worker, not the HTTP request thread.
+   And leverage some queueing mechanism or broker, RabbitMQ, Kafka, Redis streams, etc.
+   I'm mostly having fun with Clojure abstractions here.
    Parameters:
    repo - implementation of IRepository
    deliveries - map of channel -> IDelivery impl
@@ -53,4 +55,6 @@
                          ;; persist log
                          (.save-log! repo log-entry)
                          log-entry)))))
-         doall)))
+         doall))) ;; realize lazy sequence, in production I would handle this differently
+;; Probably return a future or core.async channel, I used the thread last operator to
+;; force myself to use common abstractions in Clojure.
